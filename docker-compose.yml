@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:80'
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_BASE_URL=http://backend:4000/api
+    networks:
+      - app-network
+
+  backend:
+    build: ./backend
+    ports:
+      - '4000:4000'
+    environment:
+      - MONGO_URL=mongodb+srv://manusha:EezbbjTXCmFpIUMD@cluster0.c2ixz7p.mongodb.net/ideaboard
+      # - MONGO_URL=mongodb://mongo:27017/ideaboard
+      - PORT=4000
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:6.0
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge
