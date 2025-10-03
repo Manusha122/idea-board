@@ -76,7 +76,7 @@ A modern, real-time idea sharing platform with a beautiful landing page and inte
 1. Clone the repository:
 
     ```bash
-    git clone (https://github.com/Manusha122/Idea-Board.git)
+    git clone https://github.com/Manusha122/idea-board.git
     cd idea-board
     ```
 
