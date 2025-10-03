@@ -80,14 +80,6 @@ A modern, real-time idea sharing platform with a beautiful landing page and inte
     cd idea-board
     ```
 
-2. Configure environment files:
-
-    ```bash
-    # Create .env files from templates
-    cp frontend/.env.example frontend/.env
-    cp backend/.env.example backend/.env
-    ```
-
 ### Development Environment Setup
 
 1. Start the backend server:
