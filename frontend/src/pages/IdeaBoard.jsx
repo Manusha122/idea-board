@@ -4,7 +4,9 @@ import IdeaCard from '../components/IdeaCard'
 
 // During local development it's convenient to default to a localhost backend.
 // In production (docker) VITE_API_BASE_URL is set to the docker service URL.
-const API_BASE = 'http://localhost:4000/api'
+// const API_BASE = 'http://localhost:4000/api'
+const API_BASE = 'https://idea-board-production.up.railway.app/api'
+
 
 export default function IdeaBoard(){
   const [ideas, setIdeas] = useState([])
