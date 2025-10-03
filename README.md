@@ -1,4 +1,5 @@
 # Idea Board
+# Demo Watch  -  https://idea-board-f.netlify.app
 
 A modern, real-time idea sharing platform with a beautiful landing page and interactive idea board. Share, upvote, and discuss ideas with text formatting and image support.
 
