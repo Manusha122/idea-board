@@ -10,9 +10,6 @@ you clone this project run locally change , remove or commit this lines.
 - frontend - components - LivePreview.jsx - remove Line 8 and enable Line 7.
 - frontend - pages - IdeaBoard.jsx - remove Line 13 and enable Line 12.
 - backendend - server.js - remove Line 11 and enable Line 12.
-- Responsive design for all devices
-- Engaging call-to-action buttons
-- Smooth page transitions
 
 ## 🚀 Features
 
