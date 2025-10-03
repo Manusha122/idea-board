@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 const MONGO_URL = process.env.MONGO_URL || 'mongodb+srv://manusha:EezbbjTXCmFpIUMD@cluster0.c2ixz7p.mongodb.net/ideaboard';
-// const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/ideaboard';
+//const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/ideaboard';
 const PORT = process.env.PORT || 4000;
 
 mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })

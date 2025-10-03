@@ -1,14 +1,17 @@
 version: '3.8'
 services:
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: http://backend:4000/api
     ports:
       - '3000:80'
     depends_on:
       - backend
     environment:
-      - VITE_API_BASE_URL=https://idea-board-production.up.railway.app/api
-      # - VITE_API_BASE_URL=http://backend:4000/api
+      # When running via docker-compose we prefer the internal service URL
+      - VITE_API_BASE_URL=http://backend:4000/api
     networks:
       - app-network
 
@@ -17,8 +20,8 @@ services:
     ports:
       - '4000:4000'
     environment:
-      - MONGO_URL=mongodb+srv://manusha:EezbbjTXCmFpIUMD@cluster0.c2ixz7p.mongodb.net/ideaboard
-      # - MONGO_URL=mongodb://mongo:27017/ideaboard
+      # Use the local mongo service when running compose
+      - MONGO_URL=mongodb://mongo:27017/ideaboard
       - PORT=4000
     depends_on:
       - mongo

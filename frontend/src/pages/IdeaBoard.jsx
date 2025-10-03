@@ -2,10 +2,16 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import IdeaCard from '../components/IdeaCard'
 
-// During local development it's convenient to default to a localhost backend.
-// In production (docker) VITE_API_BASE_URL is set to the docker service URL.
-// const API_BASE = 'http://localhost:4000/api'
-const API_BASE = 'https://idea-board-production.up.railway.app/api'
+// Resolve API base from Vite environment variable with fallbacks.
+const API_BASE = (
+  // When running in the browser with Vite-built app this resolves to the injected env var.
+  (import.meta && import.meta.env && import.meta.env.VITE_API_BASE_URL) ||
+  // Try runtime-injected global (used by some Docker setups that replace this at runtime).
+  (window && window.__VITE_API_BASE_URL) ||
+  // Final fallback for local development
+  //'http://localhost:4000/api'
+  'https://idea-board-production.up.railway.app/api'
+)
 
 
 export default function IdeaBoard(){

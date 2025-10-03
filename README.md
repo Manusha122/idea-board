@@ -3,6 +3,17 @@
 
 A modern, real-time idea sharing platform with a beautiful landing page and interactive idea board. Share, upvote, and discuss ideas with text formatting and image support.
 
+### Important
+
+you clone this project run locally change , remove or commit this lines.
+
+- frontend - components - LivePreview.jsx - remove Line 8 and enable Line 7.
+- frontend - pages - IdeaBoard.jsx - remove Line 13 and enable Line 12.
+- backendend - server.js - remove Line 11 and enable Line 12.
+- Responsive design for all devices
+- Engaging call-to-action buttons
+- Smooth page transitions
+
 ## 🚀 Features
 
 ### Interactive Landing Page
@@ -105,7 +116,20 @@ A modern, real-time idea sharing platform with a beautiful landing page and inte
 
     The development server will be available at `http://localhost:5173`
 
-## 🔌 API Documentation
+## � Run with Docker (one-command)
+
+To run the full stack (frontend, backend, and MongoDB) locally using Docker Compose:
+
+```bash
+docker-compose up --build
+```
+
+- Frontend (Nginx) will be available on http://localhost:3000
+- Backend API will be available on http://localhost:4000
+
+If you'd like to run it detached use `docker-compose up --build -d` and stop with `docker-compose down`.
+
+## �🔌 API Documentation
 
 ### Available Endpoints
 

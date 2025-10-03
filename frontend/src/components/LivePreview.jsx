@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-// const API_BASE = 'http://localhost:4000/api'
-const API_BASE = 'https://idea-board-production.up.railway.app/api'
+const API_BASE = (
+  (import.meta && import.meta.env && import.meta.env.VITE_API_BASE_URL) ||
+  (window && window.__VITE_API_BASE_URL) ||
+  //'http://localhost:4000/api'
+  'https://idea-board-production.up.railway.app/api'
+
+)
 
 export default function LivePreview({ pollInterval = 3000 }){
   const [ideas, setIdeas] = useState([])

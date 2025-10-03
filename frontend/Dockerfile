@@ -1,8 +1,15 @@
 FROM node:18-alpine as build
 WORKDIR /app
+
+# Allow embedding the API base URL at build time via VITE_API_BASE_URL build-arg
+ARG VITE_API_BASE_URL
+ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
+
 COPY package.json package-lock.json* ./
 RUN npm install
 COPY . .
+
+# Build the production assets; Vite replaces import.meta.env.VITE_API_BASE_URL at build time
 RUN npm run build
 
 FROM nginx:stable-alpine
